@@ -1,0 +1,41 @@
+
+Use of 5-text_indentation.py
+
+================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+================
+
+>>> text_indentation("Hello, my name is Bob. How are you?")
+Hello, my name is Bob.
+<BLANKLINE>
+How are you?
+
+================
+
+>>> text_indentation("Hello, my name is Bob. How are you?  ")
+Hello, my name is Bob.
+<BLANKLINE>
+How are you?
+
+================
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+================
+
+>>> text_indentation(42)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+================
+
+>>> text_indentation("Hello, my name is Bob. How are you?  ", 42)
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
