@@ -8,7 +8,6 @@ Functions:
 
 
 def matrix_divided(matrix, div):
-    float_or_int = "matrix must be a matrix (list of lists) of integers/floats"
     """
     Divides all elements of a matrix by a given divisor.
     Args:
@@ -21,6 +20,7 @@ def matrix_divided(matrix, div):
         TypeError: If each row of the matrix does not have the same size.
         ZeroDivisionError: If div is zero.
     """
+    float_or_int = "matrix must be a matrix (list of lists) of integers/floats"
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
             not all((isinstance(ele, int) or isinstance(ele, float))
