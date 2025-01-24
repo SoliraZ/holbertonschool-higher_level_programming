@@ -40,7 +40,7 @@ TypeError: b must be an integer
 20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630208
 
 
->>> add_integer(float('nan'))
+>>> add_integer(float('inf'))
 Traceback (most recent call last):
     ...
 ValueError: cannot convert float NaN to integer
