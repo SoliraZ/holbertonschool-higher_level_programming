@@ -6,6 +6,7 @@ that defines a rectangle by: (based on 0-rectangle.py)
 
 
 class Rectangle:
+    """ Class Rectangle that defines a rectangle """
     __width = None
     __height = None
 
