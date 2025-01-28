@@ -7,8 +7,11 @@ that defines a rectangle by: (based on 0-rectangle.py)
 
 class Rectangle:
     """ Class Rectangle that defines a rectangle """
-    __width = None
-    __height = None
+    def __init__(self, width=0, height=0):
+        if width is not None:
+            self.__width = width
+        if height is not None:
+            self.height = height
 
     @property
     def width(self):
@@ -33,13 +36,3 @@ class Rectangle:
         if (value < 0):
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def __init__(self, width=0, height=0):
-        if width < 0:
-            raise ValueError("width must be >= 0")
-        if height < 0:
-            raise ValueError("height must be >= 0")
-        if width is not None:
-            self.__width = width
-        if height is not None:
-            self.height = height
