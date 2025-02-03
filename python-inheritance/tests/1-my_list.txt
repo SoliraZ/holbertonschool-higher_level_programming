@@ -43,3 +43,11 @@ Use of 1-my_list.py
 
 
 ================
+
+>>> my_list = MyList()
+
+>>> my_list.print_sorted()
+[]
+
+
+================
