@@ -3,8 +3,9 @@
 
 
 class BaseGeometry:
-    """A class with public instance method area."""
+    """Represent base geometry."""
     def area(self):
+        """Exception"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
