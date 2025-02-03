@@ -51,3 +51,16 @@ Use of 1-my_list.py
 
 
 ================
+
+>>> my_list = MyList()
+>>> my_list.append(5+6)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(537)
+
+>>> my_list.print_sorted()
+[2, 3, 4, 11, 537]
+
+
+================
