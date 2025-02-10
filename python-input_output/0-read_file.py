@@ -4,4 +4,4 @@
 
 def read_file(filename="my_file_0.txt"):
     """ Function that reads a text file (UTF8) and prints it to stdout """
-    print(open(filename, "r").read())
+    print(open(filename, "r").read(), end = "")
