@@ -5,6 +5,10 @@ import pickle
 
 class CustomObject:
     """ CustomObject class """
+    name = ""
+    age = 0
+    is_student = False
+
     def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
