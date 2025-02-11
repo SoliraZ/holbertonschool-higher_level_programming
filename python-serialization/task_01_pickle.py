@@ -20,7 +20,6 @@ class CustomObject:
             with open(filename, 'wb') as my_file:
                 pickle.dump(self, my_file)
         except FileNotFoundError:
-            print("File not found")
             return None
 
     @classmethod
