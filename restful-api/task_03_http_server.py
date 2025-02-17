@@ -20,7 +20,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"OK")
         elif self.path == "/info":
-            info = {"version": "1.0", "description": "A simple API"}
+            info = {"version": "1.0", "description": "A simple API built with http.server"}
             json_info = json.dumps(info)
             self.send_response(200)
             self.send_header("Content-Type", "text/html")
