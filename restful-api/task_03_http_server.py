@@ -16,7 +16,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(json_data.encode("utf-8"))
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Type", "text/html")
             self.end_headers()
             self.wfile.write(b"OK")
         elif self.path == "/info":
