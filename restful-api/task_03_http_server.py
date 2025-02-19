@@ -38,10 +38,8 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"404 Not Found")
 
 
-host = "localhost"
-port = 8000
-
-server = HTTPServer((host, port), RequestHandler)
-print(f"Serving on http://{host}:{port}")
-
-server.serve_forever()
+if __name__ == "__main__":
+    server_address = ("localhost", 8000)
+    server = HTTPServer(server_address, RequestHandler)
+    print("Serving on http://{}:{}".format(*server_address))
+    server.serve_forever()
