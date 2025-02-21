@@ -51,7 +51,7 @@ def login():
     co_user = users.get(username)
     if co_user and check_password_hash(co_user["password"], password):
         token = create_access_token(identity=username)
-        return jsonify(token=token), 200
+        return jsonify(access_token=token), 200
     return jsonify({"message": "Bad username or password"}), 401
 
 
