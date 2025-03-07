@@ -16,7 +16,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cusor = db.cursor()
-    cusor.execute("SELECT * FROM states WHERE name LIKE BINARY %s \
+    cusor.execute("SELECT * FROM states WHERE name = %s \
                   ORDER BY id ASC", (sys.argv[4],))
     states = cusor.fetchall()
     for state in states:
