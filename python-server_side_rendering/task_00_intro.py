@@ -5,7 +5,6 @@
 import os
 
 
-# Define the function generate_invitations
 def generate_invitations(template, attendees):
     """ Generate invitations using the template and attendees list """
     try:
