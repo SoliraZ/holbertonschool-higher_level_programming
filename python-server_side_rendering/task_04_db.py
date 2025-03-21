@@ -70,7 +70,7 @@ def products():
         products = json_file('products.json')
     elif source == 'csv':
         products = csv_file('products.csv')
-    elif source == 'db':
+    elif source == 'sql':
         products = sqlite_db()
     else:
         return render_template('product_display.html', error="Wrong source")
