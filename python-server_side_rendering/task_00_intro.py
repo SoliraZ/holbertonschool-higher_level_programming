@@ -6,15 +6,16 @@ import os
 
 
 def generate_invitations(template, attendees):
-    """ Generate invitations using the template and attendees list """
+
     try:
         if not isinstance(template, str):
-            raise TypeError("Template is not a string")
+            raise TypeError("Template must be a string")
+
         if not isinstance(attendees, list) or not \
                 all(isinstance(attendee, dict) for attendee in attendees):
-            raise TypeError("Attendees is not a list of dictionaries")
+            raise TypeError("Attendees must be a list of dictionaries")
     except TypeError as e:
-        print(f"Error: {e}")
+        print(f'Error: {e}')
         return
 
     try:
@@ -23,7 +24,8 @@ def generate_invitations(template, attendees):
         if not attendees:
             raise ValueError("No data provided, no output files generated.")
     except ValueError as e:
-        print(f"Error: {e}")
+        print(f'Error: {e}')
+        return
 
     for i, attendee in enumerate(attendees, start=1):
         output_content = template
