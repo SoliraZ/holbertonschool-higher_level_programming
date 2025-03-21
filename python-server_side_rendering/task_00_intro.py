@@ -14,7 +14,7 @@ def generate_invitations(template, attendees):
                 all(isinstance(attendee, dict) for attendee in attendees):
             raise TypeError("Attendees is not a list of dictionaries")
     except TypeError as e:
-        print(f"Error : {e}")
+        print(f"Error: {e}")
         return
 
     try:
@@ -23,7 +23,7 @@ def generate_invitations(template, attendees):
         if not attendees:
             raise ValueError("No data provided, no output files generated.")
     except ValueError as e:
-        print(f"Error : {e}")
+        print(f"Error: {e}")
 
     for i, attendee in enumerate(attendees, start=1):
         output_content = template
@@ -33,10 +33,14 @@ def generate_invitations(template, attendees):
             if value is None:
                 value = "N/A"
             output_content = output_content.replace(placeholder, value)
-        filename = f"output_{i}.txt"
-        if os.path.exists(filename):
-            print(f"Warning : [{filename}] already exists")
+        output_filename = f"output_{i}.txt"
+
+        if os.path.exists(output_filename):
+            print(
+                f"Warning: {output_filename}\
+                already exists. Skipping file creation."
+                  )
             continue
 
-        with open(filename, 'w') as file:
-            file.write(output_content)
+        with open(output_filename, 'w') as output_file:
+            output_file.write(output_content)
