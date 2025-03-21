@@ -66,6 +66,7 @@ def items():
 def products():
     source = request.args.get('source')
     id = request.args.get('id', type=int)
+    
     if source == 'json':
         products = json_file('products.json')
     elif source == 'csv':
@@ -73,12 +74,11 @@ def products():
     elif source == 'sql':
         products = sqlite_db()
     else:
-        return render_template('product_display.html', error="Wrong source")
-
+        return render_template('product_display.html', message="Wrong source")
     if id:
         products = [product for product in products if product['id'] == id]
-    if not products:
-        return render_template('product_display.html', error="Product not found")
+        if not products:
+            return render_template('product_display.html', message="Product not found")
     return render_template('product_display.html', products=products)
 
 
