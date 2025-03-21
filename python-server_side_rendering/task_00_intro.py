@@ -36,10 +36,7 @@ def generate_invitations(template, attendees):
         output_filename = f"output_{i}.txt"
 
         if os.path.exists(output_filename):
-            print(
-                f"Warning: {output_filename}\
-                already exists. Skipping file creation."
-                  )
+            print(f"Warning : [{output_filename}] already exists")
             continue
 
         with open(output_filename, 'w') as output_file:
